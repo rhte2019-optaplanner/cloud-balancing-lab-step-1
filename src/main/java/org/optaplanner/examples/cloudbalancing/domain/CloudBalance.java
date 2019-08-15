@@ -10,7 +10,6 @@ import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 
-@PlanningSolution
 @XStreamAlias("CloudBalance")
 public class CloudBalance extends AbstractPersistable {
     
@@ -32,7 +31,6 @@ public class CloudBalance extends AbstractPersistable {
 	/**
 	 * @return the computerList
 	 */
-	@ValueRangeProvider(id = "computerRange")
 	public List<CloudComputer> getComputerList() {
 		return computerList;
 	}
@@ -47,7 +45,6 @@ public class CloudBalance extends AbstractPersistable {
 	/**
 	 * @return the processList
 	 */
-	@PlanningEntityCollectionProperty
 	public List<CloudProcess> getProcessList() {
 		return processList;
 	}
@@ -62,7 +59,6 @@ public class CloudBalance extends AbstractPersistable {
 	/**
 	 * @return the score
 	 */
-	@PlanningScore
 	public HardSoftScore getScore() {
 		return score;
 	}

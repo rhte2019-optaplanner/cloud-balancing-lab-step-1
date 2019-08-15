@@ -13,7 +13,7 @@ import org.optaplanner.examples.cloudbalancing.persistence.CloudBalanceRepositor
  */
 public class CloudBalancingSolverTest {
 
-    @Test
+    //@Test
     public void testSolver() {
         //Create the solver from our solver configuration.
         SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource("org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");

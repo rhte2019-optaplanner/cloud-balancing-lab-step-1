@@ -5,7 +5,6 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 
-@PlanningEntity
 @XStreamAlias("CloudProcess")
 public class CloudProcess extends AbstractPersistable {
     
@@ -72,7 +71,6 @@ public class CloudProcess extends AbstractPersistable {
 	/**
 	 * @return the computer
 	 */
-	@PlanningVariable(valueRangeProviderRefs = {"computerRange"})
 	public CloudComputer getComputer() {
 		return computer;
 	}
