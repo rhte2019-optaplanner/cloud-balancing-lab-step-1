@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
 import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
+import org.optaplanner.examples.cloudbalancing.optional.event.DebugSolverEventListener;
 import org.optaplanner.examples.cloudbalancing.persistence.CloudBalanceRepository;
 
 /**
@@ -13,11 +14,12 @@ import org.optaplanner.examples.cloudbalancing.persistence.CloudBalanceRepositor
  */
 public class CloudBalancingSolverTest {
 
-    //@Test
+    @Test
     public void testSolver() {
         //Create the solver from our solver configuration.
         SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource("org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
         Solver<CloudBalance> solver = solverFactory.buildSolver();
+        solver.addEventListener(new DebugSolverEventListener());
 
         //Loud a problem into the PlanningSolution
         CloudBalanceRepository repository = new CloudBalanceRepository();
