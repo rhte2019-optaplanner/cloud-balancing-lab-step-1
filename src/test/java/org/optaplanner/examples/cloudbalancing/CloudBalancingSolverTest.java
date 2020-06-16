@@ -22,12 +22,10 @@ public class CloudBalancingSolverTest {
         solver.addEventListener(new DebugSolverEventListener());
 
         //Loud a problem into the PlanningSolution
-        CloudBalanceRepository repository = new CloudBalanceRepository();
         File inputFile = new File("data/cloudbalancing/unsolved/4computers-12processes.xml");
-        CloudBalance cloudBalance = repository.load(inputFile);
+        CloudBalance cloudBalance = CloudBalanceRepository.load(inputFile);
 
         //Run the solver.
         solver.solve(cloudBalance);
-
     }
 }
